@@ -1,67 +1,161 @@
-<!DOCTYPE.html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
- <style>
-  h2{
-  font-family:times-new-roman;
-  font-size:40px;
-  color:#8c001a;
-  text-align:left;
-  margin:100px;
-   }
-   body{
-   background:linear-gradient( #EDE8D0,#efd3c8, #fee8d6);
-   }
-   .navbar{
-    background-color:white;
-	font-family:calibri;
-	padding:5px;
-	position:sticky;
-	top:0px;
-  }
-  .navcontent{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  }
-  .logo img{
-    image-size:10px;
-	height:10vh;
-	width:8vw;
-	
-  }
-  li{
-   list-style:none;
-   display:inline-block;
-  }
-  li a{
-   color:black;
-   font-size:18px;
-   font-wieght:bold;
-   margin-right:25px;
-  }
-  button{
-   background-color:black;
-   margin-left:10px;
-   border-radius:10px;
-   padding:5px;
-   width:90px;
-  }
-  .photo1{
-   width:450px;
-   height:500px;
-   float:right;
-   border-radius:50%;
-   background-blend-mode:multiply;
-  }
-  button a{
-   color:white;
-   font-weight:bold;
-   font-size:15px;
-  }
- 
- </style>
- <title>Aurelle's Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurelle's Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fbe4d8, #f8cdda, #f6b8d1);
+      color: #2a2a2a;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 1em;
+      text-decoration: none;
+      color: #2a2a2a;
+      font-weight: bold;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #e91e63;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    nav a:hover {
+      color: #e91e63;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .contact-btn {
+      background: #e91e63;
+      color: white;
+      padding: 0.5em 1.2em;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
+      transition: transform 0.2s ease, background-color 0.3s;
+    }
+
+    .contact-btn:hover {
+      transform: scale(1.05);
+      background-color: #d81b60;
+    }
+
+    .main-content {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 4em 2em;
+      animation: slideUp 0.8s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .text-section h1 {
+      font-size: 3.2em;
+      color: #8e3b5a;
+      margin: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .text-section h1:hover {
+      transform: scale(1.02);
+    }
+
+    .text-section p {
+      font-size: 1.3em;
+      color: #444;
+      margin-top: 1em;
+    }
+
+    .text-section hr {
+      border: none;
+      border-top: 2px solid #e91e63;
+      width: 50%;
+      margin: 1em 0;
+    }
+
+    .links {
+      margin-top: 2em;
+    }
+
+    .links a {
+      margin-right: 1em;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      color: #2a2a2a;
+      padding-bottom: 4px;
+      transition: border-color 0.3s, color 0.3s;
+    }
+
+    .links a:hover {
+      color: #e91e63;
+      border-color: #e91e63;
+    }
+
+    .photo img {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease;
+    }
+
+    .photo img:hover {
+      transform: scale(1.03);
+    }
+
+    @media screen and (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .photo {
+        margin-top: 2em;
+      }
+    }
+  </style>
 </head>
  <nav class="navbar">
  <div class="navcontent">
@@ -88,3 +182,4 @@
  </ul>
 </body>
 </html>
+
