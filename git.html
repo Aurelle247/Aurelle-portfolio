@@ -1,205 +1,278 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
- <style>
-  h2{
-  font-family:times-new-roman;
-  font-size:40px;
-  color:#241571;
-  text-align:left;
-  margin:100px;
-   }
-   body{
-   background:linear-gradient( #EDE8D0,#efd3c8, #fee8d6);
-   }
-   .navbar{
-    background-color:white;
-	font-family:calibri;
-	padding:5px;
-	position:sticky;
-	top:0px;
-  }
-  .navcontent{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  }
-  .logo img{
-    image-size:10px;
-	height:10vh;
-	width:8vw;
-	
-  }
-  li{
-   list-style:none;
-   display:inline-block;
-  }
-  li a{
-   color:black;
-   font-size:18px;
-   font-wieght:bold;
-   margin-right:25px;
-  }
-  button{
-   background-color:black;
-   margin-left:10px;
-   border-radius:10px;
-   padding:5px;
-   width:90px;
-  }
-  button a{
-   color:white;
-   font-weight:bold;
-   font-size:15px;
-  }
-  .git{
-  border-radius:5px;
-  border:2px solid black;
-  background:linear-gradient(to right, #c0c0c0, white, white, #c0c0c0);
-  display:inline-block;
-  margin:40px;
-  padding:5px;
-  }
-  form{
-	      background:none;
-		  width:40vw;
-		  height:4vh;
-		  margin:10px auto;
-		  padding:20px;
-		 }
-	  .form-control{
-	      text-align:left;
-		  margin-bottom:20px;
-		  }
-	  .form-control label{
-	      display:block;
-		  margin-bottom:20px;
-		  }
-	  .form-control textarea
-	     {
-		   border: 2px black;
-		   border-radius: 5px;
-		   font-family: inherit;
-		   padding: 5px;
-		   display:block;
-		   width:100%;
-		   font-size:20px;
-		   color:black;
-		   text-align:center;
-		   height:40px
-		  }
-		  .b1{
-	 background-color:white;
-	}
-	.b2{
-	 background-color:green;
-	}
-	.wp{
-   margin-top:100px;
-  }
-  .box{
-  width:500px;
-  }
-  .rating{
-  position:relative;
-  display:flex;
-  flex-direction:row-reverse;
-  margin-top:10px;
-  margin-bottom:15px;
-  border:1px solid #000;
-  box-sizing:border-box;
-  background:linear-gradient(to right, #f00, #ff0, #0f0);
-  }
-  .rating input{
-  display:none;
-  }
-  .rating label{
-  display:block;
-  cursor:pointer;
-  width:50px;
-  height:40px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  transition:0.5s;
-  background:#fff;
-  color:#000;
-  font-size:20px;
-  border-right:1px solid #000;
-  }
-  .rating input[type="radio"]:hover ~ label{
-  background:transparent;
-  }
-  .popup{
-  width:400px;
-  background:#fff;
-  border-radius:6px;
-  position:fixed;
-  justify-content:center;
-  align-items:center;
-  top:0;
-  left:50%;
-  transform:translate(-50%,-50%) scale(0.1);
-  text-align:center;
-  padding:0 30px 30px;
-  color:#333;
-  visibility:hidden;
-  transition:transform 0.4s, top 0.4s;
-  }
-  .open-popup{
-  visibility:visible;
-  top:50%;
-  transform:translate(-50%,-50%) scale(1);
-  }
-  .popup img{
-  width:100px;
-  margin-top:-50px;
-  border-radius:50px;
-  box-shadow:0 2px 5px
-  }
-  .popup h2{
-  font-size:38px;
-  font-weight:500;
-  margin:30px 0 10px;
-  }
-  .popup button{
-  width:100%;
-  margin-top:50px;
-  padding:10px 0;
-  background:#6fd649;
-  color:#fff;
-  border:0;
-  outline:none;
-  font-size:18px;
-  border-radius:4px;
-  cursor:pointer;
-  }
-  .cl{
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurelle's Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fbe4d8, #f8cdda, #f6b8d1);
+      color: #2a2a2a;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav a {
+      margin: 0 1em;
+      text-decoration: none;
+      color: #2a2a2a;
+      font-weight: bold;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #e91e63;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    nav a:hover {
+      color: #e91e63;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .contact-btn {
+      background: #e91e63;
+      color: white;
+      padding: 0.5em 1.2em;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
+      transition: transform 0.2s ease, background-color 0.3s;
+    }
+
+    .contact-btn:hover {
+      transform: scale(1.05);
+      background-color: #d81b60;
+    }
+
+    .contact-btn a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 3em 2em;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: #8e3b5a;
+      margin-bottom: 0.5em;
+    }
+
+    section p {
+      color: #444;
+      font-size: 1.1em;
+    }
+
+    /* SPECIFIC SECTIONS */
+    .grant-admission {
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .review {
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .interview {
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav {
+        display: none; /* tu peux remplacer par un menu burger si besoin */
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      section {
+        padding: 2em 1em;
+      }
+    }
+	.section {
+  padding: 40px;
+  text-align: center;
+}
+
+.box {
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+
+.review h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.form-control {
+  margin-bottom: 20px;
+}
+
+.rating-options label {
+  display: block;
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.b1 {
+  background: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.b1:hover {
+  background: #0056b3;
+}
+
+/* Pop-up overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Pop-up box */
+.popup-box {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.8);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+ .cl{
    image-size:10px;
 	height:5vh;
 	width:3vw;
 	margin:15px;
 	border-radius:10px;
   }
+  .wp{
+   margin-top:100px;
+  }
+.contact-btn {
+      background: #e91e63;
+      color: white;
+      padding: 0.5em 1.2em;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
+      transition: transform 0.2s ease, background-color 0.3s;
+    }
+
+    .contact-btn:hover {
+      transform: scale(1.05);
+      background-color: #d81b60;
+    }
+
+  
   </style>
- <title>Aurelle's Portfolio</title>
 </head>
- <nav class="navbar">
- <div class="navcontent">
-   <div class="logo"><img src="./images/l3.jpg"></img></div>
-   <ul>
-     <li><a href="portfolio.html">Home</a></li>
-	 <li><a href="aboutme.html">About</a></li>
-	 <li><a href="contact.html">Contact</a></li>
-	 <button><a href="git.html">Get In Touch</a></button>
-   </ul>
- </div>
-</nav>
 <body>
- <div class="git" style="float:left;">
- <h2>Grant Admission<h2>
- <p>________________</p>
- <h3 style="margin-left:70px;">10 reasons you should grant me admission</h3>
- <ul>
+
+  <header>
+    <a href="index.html"><img src="./images/l3.jpg" alt="Logo"></a>
+    <nav>
+      <a href="portfolio.html">Home</a>
+      <a href="aboutme.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="contact-btn"><a href="git.html">Get In Touch</a></button>
+  </header>
+<section id="contact" style="padding: 4em 2em; background-color: #f6b8d1; animation: fadeIn 1s ease-in;">
+  <h2 style="text-align: center; font-size: 2.5em; color: #8e3b5a; margin-bottom: 2em;">Get in Touch</h2>
+  <form style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.2em;">
+    <input type="text" placeholder="Your Name" required style="padding: 0.8em; border: none; border-radius: 8px; font-size: 1em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+    
+    <input type="email" placeholder="Your Email" required style="padding: 0.8em; border: none; border-radius: 8px; font-size: 1em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+    
+    <textarea placeholder="Your Message" required rows="6" style="padding: 0.8em; border: none; border-radius: 8px; font-size: 1em; box-shadow: 0 2px 8px rgba(0,0,0,0.1); resize: none;"></textarea>
+    
+    <button type="submit" style="padding: 0.8em 1.5em; background-color: #e91e63; color: white; font-size: 1em; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 10px rgba(233,30,99,0.3); transition: background-color 0.3s;">
+      Send Message
+    </button>
+  </form>
+</section>
+<body>
+<section>
+  <section class="grant-admission">
+    <h2>Grant Admission</h2>
+    <p><ul>
   <li><b>#1. Productive</b><p>As mentioned in the home page, being productive is one<br> of my best traits.
   I am a very active person, using my<br> time effectively learning new skills that enable me to<br> grow 
   and of course keep me entertained.</p></li><br>
@@ -223,13 +296,46 @@ an essential trait for   </p><br>
   and accept help from others. </p><br>
   <li><b>#10. Efficient</b></li><p>Another trait that helps me be more productive<br>
   in everyday activities by accomplishing <br>good work in less time period.</p><br>
- </ul>
- 
- </div>
- <div class="git" style="float:right;">
- <h2>Interview<br>________________</h2>
- <h3 style="margin-left:70px;">Want to know me on a better scale?</h3>
- <p><b>Start interview here >>></b><p>
+ </ul></p>
+  </section>
+<section id="review" class="review">
+  <h2>Review</h2>
+  <h3 style="margin-left:70px;">Leave your feedback</h3>
+  <p><b>Your opinion matters! Select a rating and submit.</b></p>
+
+  <form id="reviewForm">
+    <div class="form-control">
+      <label style="font-size:18px;">Rate us:</label>
+      <div class="rating-options">
+        <label><input type="radio" name="rating" value="Excellent" required> ⭐ Excellent</label>
+        <label><input type="radio" name="rating" value="Good"> 👍 Good</label>
+        <label><input type="radio" name="rating" value="Average"> 🙂 Average</label>
+        <label><input type="radio" name="rating" value="Poor"> 👎 Poor</label>
+      </div>
+    </div>
+
+    <div class="form-control">
+      <label for="reviewText" style="font-size:18px;">Your comments:</label>
+      <textarea id="reviewText" name="comment" placeholder="Write your review..." required></textarea>
+    </div>
+
+    <button class="b1" type="submit">Submit</button>
+  </form>
+</section>
+
+<!-- Pop-up -->
+<div id="popup" class="popup-overlay">
+  <div class="popup-box">
+    <h3>✅ Thank you!</h3>
+    <p id="popupMessage"></p>
+    <button id="closePopup" class="b1">Close</button>
+  </div>
+</div>
+
+  <section class="interview">
+    <h2>Interview</h2>
+    <p><h3 style="margin-left:70px;">Want to know me on a better scale?</h3>
+ <p><b>Start interview here >>></b></p>
  <form id="form">
 	 <text-box style="border:2px;color:black;">
 	   <div class="form-control">
@@ -249,74 +355,37 @@ an essential trait for   </p><br>
   <li><a href=""><img class="cl" src="./images/T3.jpg"/></a></li>
  </ul>
 	 </div>
- </div>
- <div class="git" style="float:right;">
- <h2>Review<br>_______________</h2>
- <h3 style="margin-left:70px;">Send review</h3>
- <div class="box">
-  <p><b>Overall presentation of portfolio</b></p>
-  <div class="rating">
-  <input type="radio" name="rating" id="rate10"><label for="rate10">10</label>
-  <input type="radio" name="rating" id="rate9"><label for="rate9">9</label>
-  <input type="radio" name="rating" id="rate8"><label for="rate8">8</label>
-  <input type="radio" name="rating" id="rate7"><label for="rate7">7</label>
-  <input type="radio" name="rating" id="rate6"><label for="rate6">6</label>
-  <input type="radio" name="rating" id="rate5"><label for="rate5">5</label>
-  <input type="radio" name="rating" id="rate4"><label for="rate4">4</label>
-  <input type="radio" name="rating" id="rate3"><label for="rate3">3</label>
-  <input type="radio" name="rating" id="rate2"><label for="rate2">2</label>
-  <input type="radio" name="rating" id="rate1"><label for="rate1">1</label>
-  </div>
-  </div>
-  <div class="box">
-  <p><b>Satisfactory level</b></p>
-  <div class="rating">
-  <input type="radio" name="rating" id="rate10"><label for="rate10">10</label>
-  <input type="radio" name="rating" id="rate9"><label for="rate9">9</label>
-  <input type="radio" name="rating" id="rate8"><label for="rate8">8</label>
-  <input type="radio" name="rating" id="rate7"><label for="rate7">7</label>
-  <input type="radio" name="rating" id="rate6"><label for="rate6">6</label>
-  <input type="radio" name="rating" id="rate5"><label for="rate5">5</label>
-  <input type="radio" name="rating" id="rate4"><label for="rate4">4</label>
-  <input type="radio" name="rating" id="rate3"><label for="rate3">3</label>
-  <input type="radio" name="rating" id="rate2"><label for="rate2">2</label>
-  <input type="radio" name="rating" id="rate1"><label for="rate1">1</label>
-  </div>
-  </div>
-  <p><b>Final Remark</b></p>
-  <div class="rb">
-  <input type="radio" name="rb" id="rb1"><label for="rb1">Good portfolio and 
-  admission considered.</label><br><br>
-  <input type="radio" name="rb" id="rb2"><label for="rb2">Good portfolio but 
-  admission not considered.</label><br><br>
-  <input type="radio" name="rb" id="rb3"><label for="rb3">Bad portfolio but
-  admission considered.</label><br><br>
-  <input type="radio" name="rb" id="rb4"><label for="rb4">Bad portfolio and 
-  admission not considered.</label><br><br>
-  </div>
-  <button class="b1" type="submit"  onclick="openPopup()">Submit</button>
-  <div class="popup" id="popup">
-  <h2 style="color:black;">Thanks for your review!</h2>
-  <button class="b2" type="button"  onclick="closePopup()">Ok</button>
-  </div>
- </div>
-  <div class="git" style="float:right;">
- <h2>Writtings<br>_______________</h2> 
-<h3 style="margin-left:70px;">Essays</h3>
-<object data="./images/Essay 1.docx" type="application/docx"></object>
-<object data="./images/Essay 2.docx" type="application/docx"></object>
-<object data="./images/Personal Statement.docx" type="application/docx"></object>	  
- </div>
- <script>
- let popup=document.getElementById("popup");
- 
- function openPopup(){
- popup.classList.add("open-popup");
- }
- 
- function closePopup(){
- popup.classList.remove("open-popup");
- }
- </script>
+  </section>
+
 </body>
+<script>
+document.getElementById("reviewForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let rating = document.querySelector('input[name="rating"]:checked');
+  let comment = document.getElementById("reviewText").value.trim();
+
+  if (!rating || comment === "") {
+    alert("⚠ Please fill in all fields.");
+    return;
+  }
+
+  // Message personnalisé
+  document.getElementById("popupMessage").innerText =
+    `Rating: ${rating.value}\nComment: ${comment}`;
+
+  // Afficher le pop-up
+  document.getElementById("popup").style.display = "flex";
+
+  // Réinitialiser le formulaire
+  this.reset();
+});
+
+// Bouton de fermeture
+document.getElementById("closePopup").addEventListener("click", function() {
+  document.getElementById("popup").style.display = "none";
+});
+</script>
+
+
 </html>
