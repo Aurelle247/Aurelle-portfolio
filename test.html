@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurelle's Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fbe4d8, #f8cdda, #f6b8d1);
+      color: #2a2a2a;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 50px;
+      border-radius: 8px;
+    }
+
+    nav a {
+      margin: 0 1em;
+      text-decoration: none;
+      color: #2a2a2a;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #e91e63;
+    }
+
+    .contact-btn {
+      background: #e91e63;
+      color: white;
+      padding: 0.5em 1.2em;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(233,30,99,0.3);
+      transition: transform 0.2s ease, background-color 0.3s;
+    }
+
+    .contact-btn:hover {
+      transform: scale(1.05);
+      background-color: #d81b60;
+    }
+
+    .contact-btn a {
+      text-decoration: none;
+      color: white;
+    }
+
+    /* Hero section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 4em 2em;
+      text-align: center;
+    }
+
+    .hero-text {
+      flex: 1 1 400px;
+      padding: 1em;
+    }
+
+    .hero-text h1 {
+      font-size: 3em;
+      margin: 0.2em 0;
+      color: #8e3b5a;
+    }
+
+    .hero-text hr {
+      width: 60px;
+      border: 2px solid #e91e63;
+      margin: 1em auto;
+    }
+
+    .hero-text p {
+      font-size: 1.2em;
+      color: #444;
+    }
+
+    .hero-links {
+      margin-top: 1.5em;
+    }
+
+    .hero-links a {
+      display: inline-block;
+      margin: 0 0.5em;
+      padding: 0.6em 1em;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #fff;
+      background-color: #e91e63;
+      transition: background-color 0.3s;
+    }
+
+    .hero-links a:hover {
+      background-color: #d81b60;
+    }
+
+    .hero-photo {
+      flex: 1 1 300px;
+      padding: 1em;
+      text-align: center;
+    }
+
+    .hero-photo img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+    }
+
+    /* Footer contact */
+    footer {
+      background: white;
+      text-align: center;
+      padding: 2em 1em;
+      border-top: 2px solid rgba(0,0,0,0.05);
+    }
+
+    footer h2 {
+      color: #8e3b5a;
+    }
+
+    footer p {
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <a href="index.html"><img src="images/l3.jpg" alt="Logo"></a>
+    <nav>
+      <a href="portfolio.html">Home</a>
+      <a href="aboutme.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="contact-btn"><a href="git.html">Get In Touch</a></button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hello, I'm Aurelle</h1>
+      <hr>
+      <p>Welcome to my portfolio! I am passionate about design, creativity, and building beautiful digital experiences.</p>
+      <div class="hero-links">
+        <a href="portfolio.html">View Portfolio</a>
+        <a href="aboutme.html">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="./images/profile.jpg" alt="Aurelle Photo">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <h2>Contact Me</h2>
+    <p>Email: aurelleleoue@icloud.com</p>
+    <p>Phone: +237 690039209</p>
+  </footer>
+
+</body>
+</html>
+
