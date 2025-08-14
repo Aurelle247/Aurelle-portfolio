@@ -1,162 +1,287 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<style>
-  h2{
-  font-family:times-new-roman;
-  font-size:40px;
-  color:#583927;
-  text-align:right;
-  margin:100px;
-   }
-   body{
-   background:linear-gradient( #EDE8D0,#efd3c8, #fee8d6);
-   }
-    .navbar{
-    background-color:white;
-	font-family:calibri;
-	padding:5px;
-	position:sticky;
-	top:0px;
-  }
-  .navcontent{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  }
-  .logo img{
-    image-size:10px;
-	height:10vh;
-	width:8vw;
-  }
-  li{
-   list-style:none;
-   display:inline-block;
-  }
-  li a{
-   color:black;
-   font-size:18px;
-   font-wieght:bold;
-   margin-right:25px;
-  }
-  button{
-   background-color:black;
-   margin-left:10px;
-   border-radius:10px;
-   padding:5px;
-   width:90px;
-  }
-  button a{
-   color:white;
-   font-weight:bold;
-   font-size:15px;
-  }
-   .photo1{
-   width:450px;
-   height:500px;
-   float:left;
-   border-radius:50%;
-   mix-blend-mode:;
-   margin:70px;
-  }
-   .photo2{
-   width:400px;
-   height:350px;
-   float:right;
-   border-radius:30%;
-   mix-blend-mode:multiply;
-  }
-  .text{
-  text-align:left;
-  float:center;
-  }
-  .text2{
-  float:right;
-  text-align:left;
-  padding:20px;
-  }
-  .wp{
-   margin-left:100px;
-  }
-  .vid1{
-  width:500px;
-   height:450px;
-   controls;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurelle's Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fbe4d8, #f8cdda, #f6b8d1);
+      color: #2a2a2a;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      margin: 0 1em;
+      text-decoration: none;
+      font-weight: bold;
+      color: #2a2a2a;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #e91e63; }
+    .contact-btn {
+      background: #e91e63;
+      color: white;
+      padding: 0.5em 1.2em;
+      border-radius: 8px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .contact-btn:hover { transform: scale(1.05); }
+
+    /* Sections */
+    section {
+      padding: 3em 2em;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #8e3b5a;
+      border-bottom: 2px solid #e91e63;
+      padding-bottom: 0.3em;
+    }
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      align-items: center;
+    }
+    .about-container img {
+      max-width: 350px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .skills, .hobbies {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5em;
+    }
+    .card {
+      background: rgba(255,255,255,0.85);
+      padding: 1.5em;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card i {
+      color: #e91e63;
+      font-size: 1.8em;
+      margin-bottom: 0.5em;
+    }
+
+    @media screen and (max-width: 768px) {
+      .about-container { flex-direction: column; text-align: center; }
+      .about-container img { max-width: 100%; }
+    }
+	 .slider {
+        width: 90%;
+        max-width: 800px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    .slides img {
+        width: 100%;
+        border-radius: 15px;
+    }
+    /* Boutons navigation */
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+        font-size: 18px;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    .prev:hover, .next:hover {
+        background: rgba(0,0,0,0.8);
+    }
+    /* Indicateurs */
+    .dots {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+    }
+    .dot {
+        height: 12px;
+        width: 12px;
+        background: rgba(255,255,255,0.7);
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .dot.active {
+        background: white;
+        box-shadow: 0 0 5px white;
+    }
+	.hi {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #f8cdda, #1d2b64);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+  </style>
 </head>
-<nav class="navbar">
- <div class="navcontent">
-   <div class="logo"><img src="./images/l3.jpg"></img></div>
-   <ul>
-     <li><a href="portfolio.html">Home</a></li>
-	 <li><a href="aboutme.html">About</a></li>
-	 <li><a href="contact.html">Contact</a></li>
-	 <button><a href="git.html">Get In Touch</a></button>
-   </ul>
- </div>
-</nav>
 <body>
-<img class="photo1" src="./images/im3.jpg"/>
- <h2>About<p style="color:#8c001a; font-size:15px; font-family:times-new-roman">- Leoue Aurelle</p>_______________________________</h2>
- <div class="text">
- <h4>Information</h4>
- <p>Full Name : Nguepnang Leoue Marie Aurelle</p>
- <p>Date Of Birth : 04-02-2007</p>
- <p>Nationality : Cameroonian</p>
- <p>Gender : female</p>
- <p>Height : 5'1</p>
- <p>Weight : 58kg</p>
- <p>Languages : English, French, Spanish</p>
- </div>
- <div class="text2">
- <h4>More</h4><p>A productive and creative youth, freshly out of  highschool with
-  honors in all subjects.<br>Holder of GCE Ordinary and Advanced level Cameroon with excellent 
-<a href="academs.html">academic</a> perfomance.<br>Aspiring Biomedical Engineer and strong disciplinarian. </p>
- </div>
- <h2 style="text-align:left;">Passion<br>_______________________________</h2>
- <div class="wp">
-	 <h3 style="font-size:25px;">Science</h3>
-         <p>I have an undying passion for science, especially in the Physics,<br> Chemistry and Biology fields.
-	 This passion guided me to my planned career path, Biomedical Engineering.<br>
-	 It equally led me to participate in science related activities<br>like the science club,
-	 in which I focused on the chemistry part of it.<br> Academically, though challenging it always intruiges me and it is <br>
-	 </p>
- </div>
- <h2 style="text-align:left;">Skills<br>_______________________________</h2>
- <div class="wp">
- <h3>Web Programming</h3>
- <p>With a core knowledge from grade 9 and continous practice from learning more online,
-  <br> web programming is an essential hard skill of mine which increased my values and abilities.
-   <br>Visit first website and ongoing project >><a href="EIE2.html">Entertainment In Excess.</a></p>
-  <p>P.S : This portfolio website was equally done by me.</p>
- </div>
- <div class="wp" style="margin-top:150px;">
- <h3>Commerce</h3><img class="photo2" src="./images/comerce.jpg"/>
- <p>A widely practiced activity but however challanging.<br>Practicing this activity
- however improved my communication skills, negotiating ability,<br> business and marketing knowledge
- and experience. Innovating in new methods that may <br>or may not work has proven 
-to be very complex. However, despite multiple failures, I was still willing <br>to face other challenges
- and learn from them.</p>
- <p style="font-size:20px;">School Fare Stall 2024 >>></p>
- </div>
- <h2 style="text-align:left;">Hobbies<br>_______________________________</h2>
- <div class="wp">
- <h3>Dancing</h3>
- <p>An activity that helps in stress relieve and also a good form of exercise.<br>The best 
- way to keep fit and relax at the same time.</p>
- </div>
- <div class="wp">
- <h3>Learning</h3>
- <p>Exploring new things such as languages, musical instruments, always feels exciting.<br>
-Learning something new improves reasoning capacity and equally helps gain new skills. </p>
-<h3>Society Games</h3>
- <p>Most especially sudoku, chess, ludo and card games.<br>These games are not only trivial
-  but are also a nice way to bond and interact with people</p>
-  <h3>Reading</h3>
-  <p>Reading is one of the best ways in which one can find comfort.<br>
-  It is something that opens up imagination, Improves voccabuary and a means of acquiring 
-  <br>information. Novels, whether regular books or E-books, are so much  <br>
-  interesting to read.</p>
- </div>
+  <header>
+   <a href="index.html> <img src="./images/l3.jpg" alt="Logo" height="50"></a>
+    <nav>
+      <a href="portfolio.html">Home</a>
+      <a href="aboutme.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="contact-btn"><a href="git.html">Get In Touch</a></button>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me <small style="color:#8c001a; font-size:16px;">- Leoue Aurelle</small></h2>
+    <div class="about-container">
+      <div>
+        <p>Hello! I'm <strong>Aurelle</strong>, a passionate and creative individual who enjoys building user-friendly digital experiences.</p>
+        <p>Full Name: Nguepnang Leoue Marie Aurelle<br>
+        Date Of Birth: 04-02-2008<br>
+        Nationality: Cameroonian<br>
+        Languages: English, French, Spanish</p>
+        <p>Aspiring Biomedical Engineer and strong disciplinarian.</p>
+      </div>
+      <img src="./images/im3.jpg" alt="About Photo">
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card">
+        <i class="fa-solid fa-code"></i>
+        <h3>Web Programming</h3>
+        <p>Core knowledge since grade 9, continuously improving through online learning. Creator of <a href="EIE2.html">Entertainment In Excess</a>.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-shop"></i>
+        <h3>Commerce</h3>
+        <p>Experience in marketing, negotiation, and innovation in business methods through school events.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hobbies Section -->
+  <section>
+    <h2>Hobbies</h2>
+    <div class="hobbies">
+      <div class="card">
+        <i class="fa-solid fa-music"></i>
+        <h3>Dancing</h3>
+        <p>Stress relief, fitness, and fun combined.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-book"></i>
+        <h3>Reading</h3>
+        <p>Opens imagination, improves vocabulary, and expands knowledge.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-chess"></i>
+        <h3>Games</h3>
+        <p>Sudoku, chess, and ludo — great for bonding and strategy.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-language"></i>
+        <h3>Learning</h3>
+        <p>Exploring languages, instruments, and new skills.</p>
+      </div>
+    </div>
+  </section>
+  <div class="hi">
+<div class="slider">
+    <div class="slides">
+        <img src="./images/" alt="Image 1">
+        <img src="./images/" alt="Image 2">
+        <img src="./images/" alt="Image 3">
+        <img src="./images/" alt="Image 4">
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+    <div class="dots"></div>
+</div>
+</div>
 </body>
+<script>
+    const slides = document.querySelector('.slides');
+    const images = document.querySelectorAll('.slides img');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    const dotsContainer = document.querySelector('.dots');
+
+    let index = 0;
+    const total = images.length;
+
+    // Création des indicateurs
+    for (let i = 0; i < total; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    }
+    const dots = document.querySelectorAll('.dot');
+
+    function updateSlider() {
+        slides.style.transform = `translateX(${-index * 100}%)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+    }
+
+    function nextSlide() {
+        index = (index + 1) % total;
+        updateSlider();
+    }
+
+    function prevSlide() {
+        index = (index - 1 + total) % total;
+        updateSlider();
+    }
+
+    function goToSlide(n) {
+        index = n;
+        updateSlider();
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // Auto défilement toutes les 5 secondes
+    setInterval(nextSlide, 5000);
+</script>
 </html>
