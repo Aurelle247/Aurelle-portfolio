@@ -1,103 +1,176 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<style>
- h2{
-  font-family:times-new-roman;
-  font-size:40px;
-  color:#8c001a;
-  text-align:center;
-  
-  }
-   body{
-   background:linear-gradient( #EDE8D0,#efd3c8, #fee8d6);
-   }
-    .navbar{
-    background-color:white;
-	font-family:calibri;
-	padding:5px;
-	position:sticky;
-	top:0px;
-  }
-  .navcontent{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  }
-  .logo img{
-    image-size:10px;
-	height:10vh;
-	width:8vw;
-  }
-  li{
-   list-style:none;
-   display:inline-block;
-  }
-  li a{
-   color:black;
-   font-size:18px;
-   font-wieght:bold;
-   margin-right:25px;
-  }
-  button{
-   background-color:black;
-   margin-left:10px;
-   border-radius:10px;
-   padding:5px;
-   width:90px;
-  }
-  button a{
-   color:white;
-   font-weight:bold;
-   font-size:15px;
-  }
-   .photo1{
-   width:450px;
-   height:500px;
-   float:left;
-   border-radius:50%;
-   mix-blend-mode:;
-   margin:70px;
-  }
-  h3{
-  color:#583927;
-  font-size:30px;
-  margin-left:50px;
-  }
-  object{
-  width:450px;
-  height:500px;
-  margin-left:100px;
-  }
-</style>!
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurelle's Portfolio - Academics</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fbe4d8, #f8cdda, #f6b8d1);
+      color: #2a2a2a;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      margin: 0 1em;
+      text-decoration: none;
+      color: #2a2a2a;
+      font-weight: bold;
+      position: relative;
+    }
+    nav a:hover { color: #e91e63; }
+    .contact-btn {
+      background: #e91e63;
+      color: white;
+      padding: 0.5em 1.2em;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .contact-btn:hover {
+      transform: scale(1.05);
+      background-color: #d81b60;
+    }
+
+    /* Slider */
+    .slider {
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.6s ease;
+    }
+    .slides img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2em;
+      color: white;
+      background: rgba(0,0,0,0.4);
+      padding: 0.2em 0.6em;
+      cursor: pointer;
+      border-radius: 50%;
+      user-select: none;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    /* Content */
+    section {
+      padding: 2em;
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 10px;
+      margin-top: 2em;
+    }
+    h2 { color: #8e3b5a; text-align: center; }
+    .doc {
+      display: flex;
+      align-items: center;
+      margin: 1.5em 0;
+    }
+    .doc i {
+      font-size: 2em;
+      color: #e91e63;
+      margin-right: 1em;
+    }
+    object {
+      width: 100%;
+      height: 400px;
+      margin-top: 0.5em;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+    }
+  </style>
 </head>
-<nav class="navbar">
- <div class="navcontent">
-   <div class="logo"><img src="./images/l3.jpg"></img></div>
-   <ul>
-     <li><a href="portfolio.html">Home</a></li>
-	 <li><a href="aboutme.html">About</a></li>
-	 <li><a href="contact.html">Contact</a></li>
-	 <button><a href="git.html">Get In Touch</a></button>
-   </ul>
- </div>
-</nav>
 <body>
- <h2>_______________________________<br>Academics<br>_______________________________</h2>
- <h3>Transcripts and Slip<br>_____</h3> 
- <p style="margin-left:50px;"><b>Transcript showing first cycle (junior secondary) results <br>
- while attending Holy Cross International College.</b></p>
- <p style="margin-left:50px;"><b>CGCE O-level result slip administered by the Cameroon <br>General Certificate of Examination
- Board.</b></p>
- <p style="margin-left:50px;"><b>Awaiting GCE A-level result slip.</b></p>
- <object data="./images/transcript.pdf" type="application/pdf"></object>
- <object data="./images/.pdf" type="application/pdf"></object>
- <object data="./images/.pdf" type="application/pdf"></object>	
- <h3>Certificates<br>_____</h3>
- <p style="margin-left:50px;"><b>Skolarr Certificate for active participation during academic<br> interschool competition.</b></p> 
- <object data="./images/certificate1.pdf" type="application/pdf">
- </object>
- <h3>Standardized Test<br>_____</h3>
- <p style="margin-left:50px;"><b>SAT Test score.</b></p>
- <object data="./images/SAT.pdf" type="application/pdf"></object>
+
+  <header>
+    <a href="index.html"><img src="./images/l3.jpg" alt="Logo" height="50"></a>
+    <nav>
+      <a href="portfolio.html">Home</a>
+      <a href="aboutme.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="contact-btn">Get In Touch</button>
+  </header>
+
+  <!-- Image Slider -->
+  <div class="slider">
+    <div class="slides">
+      <img src="./images/slide1.jpg" alt="Transcript Preview">
+      <img src="./images/slide2.jpg" alt="Certificate Preview">
+      <img src="./images/slide3.jpg" alt="SAT Preview">
+    </div>
+    <div class="prev">&#10094;</div>
+    <div class="next">&#10095;</div>
+  </div>
+
+  <!-- Academic Section -->
+  <section>
+    <h2>Academics</h2>
+
+    <div class="doc">
+      <i class="fa-solid fa-file-lines"></i>
+      <p><b>Transcript showing first cycle results at Holy Cross International College.</b></p>
+    </div>
+    <object data="./images/transcript.pdf" type="application/pdf"></object>
+
+    <div class="doc">
+      <i class="fa-solid fa-file-alt"></i>
+      <p><b>CGCE O-level result slip administered by the Cameroon GCE Board.</b></p>
+    </div>
+    <object data="./images/slip.pdf" type="application/pdf"></object>
+
+    <div class="doc">
+      <i class="fa-solid fa-certificate"></i>
+      <p><b>Skolarr Certificate for active participation during interschool competition.</b></p>
+    </div>
+    <object data="./images/certificate1.pdf" type="application/pdf"></object>
+
+    <div class="doc">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <p><b>SAT Test score.</b></p>
+    </div>
+    <object data="./images/SAT.pdf" type="application/pdf"></object>
+  </section>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelector(".slides");
+    const totalSlides = slides.children.length;
+
+    document.querySelector(".next").onclick = () => changeSlide(1);
+    document.querySelector(".prev").onclick = () => changeSlide(-1);
+
+    function changeSlide(direction) {
+      slideIndex = (slideIndex + direction + totalSlides) % totalSlides;
+      slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+    }
+
+    setInterval(() => changeSlide(1), 5000); // Auto change every 5s
+  </script>
+
 </body>
 </html>
