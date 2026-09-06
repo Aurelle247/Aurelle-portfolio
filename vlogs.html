@@ -187,7 +187,9 @@ $sql = "SELECT video_url, description, created_at FROM posts ORDER BY created_at
 $result = $conn->query($sql);
 	?>
 
-	<video src="./images/FAET0687.MOV"></video>
+	<video controls>
+    <source src="./images/FAET0687.mp4" type="video/mp4">
+    </video>
 	<h4>fisrt vlog</h4>
 	<p><span id="timestamp"></span></p>
 </section>
