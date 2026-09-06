@@ -9,6 +9,7 @@
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(135deg, #fdf7f3, #f6c8a9, #ee985f);
+	  background-repeat: no-repeat;
       color: #2a2a2a;
       animation: fadeIn 1s ease-in;
     }
@@ -173,8 +174,40 @@
 <section class="main-content">
 	<div class="text-section">
  <h2>VLOGS</h2>
-    
-  </div>
+	<?php
+		            // Database connection
+$conn = new mysqli("localhost", "root", "", "database");
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch posts containing video + description
+$sql = "SELECT video_url, description, created_at FROM posts ORDER BY created_at DESC";
+$result = $conn->query($sql);
+	?>
+
+	<video src=""></video>
+	<h4>fisrt vlog</h4>
+	<p><span id="timestamp"></span></p>
 </section>
+
+<section>
+<h2>Create</h2>
+   <div>
+        <label class="photo-upload" for="videoInput">
+     <span class="prev">Upload</span>
+     </label>
+     <input type="file" id="videoInput" accept="image/*; video/*">
+     <textarea placeholder="Add description"></textarea>
+     <button type="submit" action="post.php">Post</button>
+   </div>
+</section>
+	
 </body>
+
+<script>
+    const now = new Date();
+    document.getElementById("timestamp").textContent = now.toLocaleString();
+</script>
 </html>
