@@ -174,26 +174,26 @@
 <section class="main-content">
 	<div class="text-section">
  <h2>VLOGS</h2>
-	<?php
+    <?php
 		            // Database connection
-$conn = new mysqli("localhost", "root", "", "database");
+//$conn = new mysqli("localhost", "root", "", "database");
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+//if ($conn->connect_error) {
+   // die("Connection failed: " . $conn->connect_error);
+//}
 
 // Fetch posts containing video + description
-$sql = "SELECT video_url, description, created_at FROM posts ORDER BY created_at DESC";
-$result = $conn->query($sql);
+//$sql = "SELECT video_url, description, created_at FROM posts ORDER BY created_at DESC";
+//$result = $conn->query($sql);
 	?>
 
 	<video controls>
-    <source src="./images/FAET0687.mp4" type="video/mp4">
+    <source src="./images/T1.jpg" type="video/mp4">
     </video>
 	<h4>fisrt vlog</h4>
 	<p><span id="timestamp"></span></p>
 </section>
-
+<!--
 <section>
 <h2>Create</h2>
    <div>
@@ -205,6 +205,7 @@ $result = $conn->query($sql);
      <button type="submit" action="post.php">Post</button>
    </div>
 </section>
+	-->
 	
 </body>
 
