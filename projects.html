@@ -61,21 +61,20 @@
     }
 
     .contact-btn {
-      background: #e56917;
-      color: white;
+      background: #9b470f;
       padding: 0.5em 1.2em;
-      border: none;
       border-radius: 8px;
       font-weight: bold;
+      border: none;
+	    box-shadow: 0 4px 10px rgba(181, 101, 29, 0.3);
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
-      transition: transform 0.2s ease, background-color 0.3s;
+      transition: transform 0.2s ease, bqckground-color0.3s;
     }
-
-    .contact-btn:hover {
-      transform: scale(1.05);
-      background-color: #9b470f;
-    }
+    .contact-btn:hover { transform: scale(1.05); }
+	.contact-btn a{
+		text-decoration:none;
+		color: white;
+	}
 
     .main-content {
       display: flex;
@@ -157,6 +156,36 @@
       .photo {
         margin-top: 2em;
       }
+    .projects{
+      padding: 4em 2em; 
+      background-color: #fff; 
+      animation: fadeIn 1s ease-in;
+    }
+    .projects h2{
+      text-align: center; 
+      font-size: 2.5em; 
+      color: #9b470f; 
+      margin-bottom: 1em;
+    }
+    .pr1{
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+      gap: 2em;
+    }
+    .pr2{
+      background: #fbe4d8; 
+      border-radius: 12px; 
+      padding: 1.5em; 
+      width: 280px; 
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1); 
+      transition: transform 0.3s;
+    }
+    .pr2 h3{
+      color: #2a2a2a;
+    }
+    .pr2 p{
+      color: #444;
     }
   </style>
 </head>
@@ -171,20 +200,20 @@
     <button class="contact-btn"><a href="git.html">Get In Touch</a></button>
   </header>
 
-<section id="projects" style="padding: 4em 2em; background-color: #fff; animation: fadeIn 1s ease-in;">
-  <h2 style="text-align: center; font-size: 2.5em; color: #8e3b5a; margin-bottom: 1em;">My Projects</h2>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2em;">
-    <div style="background: #fbe4d8; border-radius: 12px; padding: 1.5em; width: 280px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s;">
-      <h3 style="color: #2a2a2a;">Project One</h3>
-      <p style="color: #444;">A website created for the purpose of entertainment,an ongoing project. Built with HTML/CSS/JS.</p>
+<section class="projects">
+  <h2>My Projects</h2>
+  <div class="pr1">
+    <div class="pr2">
+      <h3>Project One</h3>
+      <p>A website created for the purpose of entertainment,an ongoing project. Built with HTML/CSS/JS.</p>
     </div>
-    <div style="background: #fbe4d8; border-radius: 12px; padding: 1.5em; width: 280px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s;">
-      <h3 style="color: #2a2a2a;">Project Two</h3>
-      <p style="color: #444;">A recent work consisting of applying the knowledge of physics in tar removal from the lungs using charges.</p>
+    <div class="pr2">
+      <h3>Project Two</h3>
+      <p>A recent work consisting of applying the knowledge of physics in tar removal from the lungs using charges.</p>
     </div>
-    <div style="background: #fbe4d8; border-radius: 12px; padding: 1.5em; width: 280px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s;">
-      <h3 style="color: #2a2a2a;">Project Three</h3>
-      <p style="color: #444;">Forseeable plans: A four-year bachelor's in Biomedical Engineering.</p>
+    <div class="pr2">
+      <h3>Project Three</h3>
+      <p>Forseeable plans: A four-year bachelor's in Biomedical Engineering.</p>
     </div>
   </div>
 </section>
