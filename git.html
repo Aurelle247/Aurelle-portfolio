@@ -232,8 +232,51 @@ textarea {
       transform: scale(1.05);
       background-color: #9b470f;
     }
-
-  
+    .message{
+		padding: 4em 2em; 
+		background-color: #f6b8d1; 
+		animation: fadeIn 1s ease-in;
+	}
+	.message h2{
+		text-align: center; 
+		font-size: 2.5em; 
+		color: #9b470f; 
+		margin-bottom: 2em;
+	}
+	.message form{
+		max-width: 600px; 
+		margin: 0 auto; 
+		display: flex; 
+		flex-direction: column; 
+		gap: 1.2em;
+	}
+	.message input{
+		padding: 0.8em; 
+		border: none; 
+		border-radius: 8px; 
+		font-size: 1em; 
+		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	}
+	.message textarea{
+		padding: 0.8em;
+		border: none;
+		border-radius:8px;
+		font-size: 1em;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+		resize: none;
+	}
+	.message button{
+		padding: 0.8em 1.5em; 
+		background-color: #e91e63; 
+		color: white; 
+		font-size: 1em; 
+		font-weight: bold; 
+		border: none; 
+		border-radius: 8px; 
+		cursor: pointer; 
+		box-shadow: 0 4px 10px rgba(233,30,99,0.3); 
+		transition: background-color 0.3s;
+	}
   </style>
 </head>
 <body>
@@ -247,40 +290,21 @@ textarea {
     </nav>
     <button class="contact-btn"><a href="git.html">Get In Touch</a></button>
   </header>
-<section id="contact" style="padding: 4em 2em; background-color: #f6b8d1; animation: fadeIn 1s ease-in;">
-  <h2 style="text-align: center; font-size: 2.5em; color: #8e3b5a; margin-bottom: 2em;">Get in Touch</h2>
-  <form style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.2em;">
-    <input type="text" placeholder="Your Name" required style="padding: 0.8em; border: none; border-radius: 8px; font-size: 1em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<section class="message">
+  <h2>Get in Touch</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required/>
+    <input type="email" placeholder="Your Email" required/>
     
-    <input type="email" placeholder="Your Email" required style="padding: 0.8em; border: none; border-radius: 8px; font-size: 1em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+    <textarea placeholder="Your Message" required rows="6"></textarea>
     
-    <textarea placeholder="Your Message" required rows="6" style="padding: 0.8em; border: none; border-radius: 8px; font-size: 1em; box-shadow: 0 2px 8px rgba(0,0,0,0.1); resize: none;"></textarea>
-    
-    <button type="submit" style="padding: 0.8em 1.5em; background-color: #e91e63; color: white; font-size: 1em; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 10px rgba(233,30,99,0.3); transition: background-color 0.3s;">
+    <button type="submit">
       Send Message
     </button>
   </form>
 </section>
 <body>
 <section>
-  <section class="grant-admission">
-    <h2>Grant Admission</h2>
-	  <h3><b>Why do I deserve a spot?</b></h3>
-    <p><ul>
-  <li><b>#1. Productive</b><p>As a driven and productive individual, I prioritize continous learning, leveraging
-  <br>my time to acquire new skills that fuel my personal and professional growth.</p></li><br>
-  <li><b>#2. Creative</b></li><p>Innovative thinking is my forte-I enjoy brainstorming new ideas<br> and devising strategies that 
-  propel growth and success.</p><br>
-  <li><b>#3.Problem-solving</b></li><p>Mathematics and logic inform my problem-solving approach, enabling me to break down<br>
-  complex issues, identify key patterns, and implement effective strategies.</p><br>
-  <li><b>#4. Leadership</b></li><p>I possess a distinct leadership quality that drives me to take innitiative<br>
- and translate ideas into tangible actions. This innate ability to lead enables <br>me to positively influence those around me.
- I thrive on challenging myself<br>as it fosters personal growth and development. </p><br>
-  <li><b>#5. Communication</b></li><p>I am able to articulate ideas clearly and build strong relationships<br>
- with people from different backgrounds, thanks to my strong communication skills. <br> 
-  </p><br>
- </ul></p>
-  </section>
 <section id="review" class="review">
   <h2>Review</h2>
   <h3 style="margin-left:70px;">Leave your feedback</h3>
