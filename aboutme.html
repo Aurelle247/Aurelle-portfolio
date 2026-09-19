@@ -60,10 +60,14 @@
       gap: 2em;
       align-items: center;
     }
-    .about-container img {
+	.text {
+		float: left;
+	}
+    .photo img {
       max-width: 350px;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+	  float: right;
     }
     .skills, .hobbies {
       display: grid;
@@ -169,15 +173,18 @@
   <section id="about">
     <h2>About Me <small style="color:#8c001a; font-size:16px;">- Leoue Aurelle</small></h2>
     <div class="about-container">
-      <div>
+      <div class="text">
         <p>Hello! I'm <strong>Aurelle</strong>, a passionate and creative individual who enjoys building user-friendly digital experiences.</p>
-        <p>Full Name: Nguepnang Leoue Marie Aurelle<br>
-        Date Of Birth: 04-02-2008<br>
-        Nationality: Cameroonian<br>
-        Languages: English, French, Spanish</p>
-        <p>Aspiring Biomedical Engineer and strong disciplinarian.</p>
+        <p><b>Full Name</b>: Nguepnang Leoue Marie Aurelle<br>
+        <b>Date Of Birth: 04-02-2008</b><br>
+        <b>Nationality</b>: Cameroonian<br>
+        <b>Languages</b>: English, French, Spanish</p>
+		<b>Height</b>: 161cm/5ft3
+        <p>Aspiring Computer-AI Engineer.</p>
       </div>
-      <img src="./images/im3.jpg" alt="About Photo">
+	  <div class="photo">
+      <img src="./images/im3.jpg" alt="About_Photo">
+	  </div>
     </div>
   </section>
 
@@ -227,11 +234,7 @@
   <div class="hi">
 <div class="slider">
     <div class="slides">
-        <img src="./images/fare2.jpg" alt="Image 1">
-        <img src="./images/sc2.jpg" alt="Image 2">
-        <img src="./images/web.jpg" alt="Image 3">
-        <img src="./images/Capture d'ecran 2025-09-24 030754.png" alt="Image 4">
-		<img src="./images/game.jpg" alt="Image 5">
+       
     </div>
     <button class="prev">&#10094;</button>
     <button class="next">&#10095;</button>
