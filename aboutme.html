@@ -30,7 +30,26 @@
       color: #2a2a2a;
       transition: color 0.3s;
     }
-    nav a:hover { color: #9b470f; }
+	nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #9b470f;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    nav a:hover {
+      color: #9b470f;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+  
     .contact-btn {
       background: #9b470f;
       padding: 0.5em 1.2em;
